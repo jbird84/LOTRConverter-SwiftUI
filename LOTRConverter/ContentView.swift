@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     
     @State var showExchangeInfo = false
+    @State var showSelectCurrencyView = false
+    
     @State var leftAmount = ""
     @State var rightAmount = ""
+    
+    @FocusState var leftTyping
+    @FocusState var rightTyping
+    
+    @State var leftCurrency: Currency = .copperPenny
+    @State var rightCurrency: Currency = .goldPenny
     
     var body: some View {
         ZStack {
@@ -31,18 +40,36 @@ struct ContentView: View {
                 HStack {
                     VStack {
                         HStack {
-                            Image(.silverpiece)
+                            Image(leftCurrency.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
-                            Text("Silver Piece")
+                            Text(leftCurrency.name)
                                 .font(.headline)
                                 .foregroundStyle(.white)
                         }
                         .padding(.bottom, -5)
+                        .onTapGesture {
+                            showSelectCurrencyView.toggle()
+                        }
+                        .popoverTip(CurrencyTip(), arrowEdge: .bottom)
+                        .sheet(isPresented: $showSelectCurrencyView) {
+                            SelectCurrency(topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
+                        }
+                    
                         
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
+                            .focused($leftTyping)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: leftAmount)  {
+                                if leftTyping {
+                                    rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
+                                }
+                            }
+                            .onChange(of: leftCurrency) {
+                                leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
+                            }
                     }
                     Image(systemName: "equal")
                         .font(.largeTitle)
@@ -51,19 +78,32 @@ struct ContentView: View {
                     
                     VStack {
                         HStack {
-                            Text("Gold Piece")
+                            Text(rightCurrency.name)
                                 .font(.headline)
                                 .foregroundStyle(.white)
-                            Image(.goldpiece)
+                            Image(rightCurrency.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
                         }
                         .padding(.bottom, -5)
+                        .onTapGesture {
+                            showSelectCurrencyView.toggle()
+                        }
                         
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
+                            .keyboardType(.decimalPad)
+                            .focused($rightTyping)
                             .multilineTextAlignment(.trailing)
+                            .onChange(of: rightAmount)  {
+                                if rightTyping {
+                                    leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
+                                }
+                            }
+                            .onChange(of: rightCurrency) {
+                                rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
+                            }
                     }
                 }
                 .padding()
@@ -86,6 +126,9 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+        .task {
+            try? Tips.configure()
         }
     }
 }

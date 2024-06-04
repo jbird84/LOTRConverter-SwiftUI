@@ -13,6 +13,11 @@
 		DA26C8CE2C0C8E6F00ADB690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA26C8CD2C0C8E6F00ADB690 /* Preview Assets.xcassets */; };
 		DA26C8D52C0D429800ADB690 /* ExchangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8D42C0D429800ADB690 /* ExchangeInfoView.swift */; };
 		DA26C8D72C0D46D000ADB690 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8D62C0D46D000ADB690 /* ExchangeRate.swift */; };
+		DA26C8D92C0E2AE600ADB690 /* SelectCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8D82C0E2AE600ADB690 /* SelectCurrency.swift */; };
+		DA26C8DB2C0E2DAE00ADB690 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8DA2C0E2DAE00ADB690 /* CurrencyView.swift */; };
+		DA26C8DD2C0E802000ADB690 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8DC2C0E802000ADB690 /* Currency.swift */; };
+		DA26C8DF2C0F969F00ADB690 /* IconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8DE2C0F969F00ADB690 /* IconGrid.swift */; };
+		DA26C8E12C0FC18400ADB690 /* CurrencyTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26C8E02C0FC18400ADB690 /* CurrencyTip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		DA26C8CD2C0C8E6F00ADB690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA26C8D42C0D429800ADB690 /* ExchangeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInfoView.swift; sourceTree = "<group>"; };
 		DA26C8D62C0D46D000ADB690 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		DA26C8D82C0E2AE600ADB690 /* SelectCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrency.swift; sourceTree = "<group>"; };
+		DA26C8DA2C0E2DAE00ADB690 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		DA26C8DC2C0E802000ADB690 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		DA26C8DE2C0F969F00ADB690 /* IconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGrid.swift; sourceTree = "<group>"; };
+		DA26C8E02C0FC18400ADB690 /* CurrencyTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +66,14 @@
 			isa = PBXGroup;
 			children = (
 				DA26C8C62C0C8E6E00ADB690 /* LOTRConverterApp.swift */,
+				DA26C8DC2C0E802000ADB690 /* Currency.swift */,
 				DA26C8C82C0C8E6E00ADB690 /* ContentView.swift */,
+				DA26C8D82C0E2AE600ADB690 /* SelectCurrency.swift */,
+				DA26C8DE2C0F969F00ADB690 /* IconGrid.swift */,
+				DA26C8DA2C0E2DAE00ADB690 /* CurrencyView.swift */,
 				DA26C8D42C0D429800ADB690 /* ExchangeInfoView.swift */,
 				DA26C8D62C0D46D000ADB690 /* ExchangeRate.swift */,
+				DA26C8E02C0FC18400ADB690 /* CurrencyTip.swift */,
 				DA26C8CA2C0C8E6F00ADB690 /* Assets.xcassets */,
 				DA26C8CC2C0C8E6F00ADB690 /* Preview Content */,
 			);
@@ -143,9 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA26C8DF2C0F969F00ADB690 /* IconGrid.swift in Sources */,
 				DA26C8D72C0D46D000ADB690 /* ExchangeRate.swift in Sources */,
+				DA26C8DB2C0E2DAE00ADB690 /* CurrencyView.swift in Sources */,
+				DA26C8D92C0E2AE600ADB690 /* SelectCurrency.swift in Sources */,
 				DA26C8C92C0C8E6E00ADB690 /* ContentView.swift in Sources */,
+				DA26C8E12C0FC18400ADB690 /* CurrencyTip.swift in Sources */,
 				DA26C8C72C0C8E6E00ADB690 /* LOTRConverterApp.swift in Sources */,
+				DA26C8DD2C0E802000ADB690 /* Currency.swift in Sources */,
 				DA26C8D52C0D429800ADB690 /* ExchangeInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
