@@ -15,7 +15,7 @@ enum Currency: Double, CaseIterable, Identifiable {
     case silverPiece = 16
     case goldPenny = 4
     case goldPiece = 1
-   
+    
     var id: Currency { self }
     
     var image: ImageResource {

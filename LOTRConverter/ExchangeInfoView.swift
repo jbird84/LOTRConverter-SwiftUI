@@ -38,7 +38,7 @@ struct ExchangeInfoView: View {
                 .font(.largeTitle)
                 .padding()
                 .foregroundStyle(.white)
-
+                
             }
             .foregroundStyle(.black)
         }

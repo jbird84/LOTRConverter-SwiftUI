@@ -56,7 +56,7 @@ struct ContentView: View {
                         .sheet(isPresented: $showSelectCurrencyView) {
                             SelectCurrency(topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
                         }
-                    
+                        
                         
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)

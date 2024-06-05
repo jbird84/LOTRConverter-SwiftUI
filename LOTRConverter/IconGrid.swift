@@ -28,7 +28,7 @@ struct IconGrid: View {
                             self.currency = currentCurrency
                         }
                 }
-               
+                
             }
         }
     }

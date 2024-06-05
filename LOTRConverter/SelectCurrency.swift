@@ -12,7 +12,7 @@ struct SelectCurrency: View {
     @Environment(\.dismiss) var dismissView
     @Binding var topCurrency: Currency
     @Binding var bottomCurrency: Currency
-
+    
     var body: some View {
         ZStack {
             Image(.parchment)
@@ -23,7 +23,7 @@ struct SelectCurrency: View {
                 Text("Select the currency you are starting with.")
                 
                 IconGrid(currency: $topCurrency)
-               
+                
                 
                 Text("Select the currency you would like to convert to.")
                 
@@ -37,7 +37,7 @@ struct SelectCurrency: View {
                 .font(.largeTitle)
                 .padding()
                 .foregroundStyle(.white)
-        
+                
             }
             .padding()
             .multilineTextAlignment(.center)

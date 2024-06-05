@@ -14,6 +14,4 @@ struct CurrencyTip: Tip {
     var message: Text? {
         Text("You can tap the left or the right currency to bring up the Select Currency screen.")
     }
-    
-    
 }
